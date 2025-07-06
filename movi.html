@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Audio and Video Player</title>
+</head>
+<body>
+
+<h1>Watch Video and Listen to Audio</h1>
+
+<label for="videoLink">Enter Video Link:</label>
+<input type="url" id="videoLink" name="videoLink"><br><br>
+
+<button onclick="playVideo()">Play Video</button>
+<button onclick="playAudio()">Play Audio</button>
+
+<br><br>
+
+<video id="myVideo" width="640" height="360" controls>
+  Your browser does not support the video tag.
+</video>
+
+<br>
+
+<audio id="myAudio" controls>
+  Your browser does not support the audio tag.
+</audio>
+
+<script>
+function playVideo() {
+  var videoLink = document.getElementById('videoLink').value;
+  var video = document.getElementById('myVideo');
+  video.src = videoLink;
+  video.load();
+  video.play();
+}
+
+function playAudio() {
+  var audio = document.getElementById('myAudio');
+  audio.src = 'your_audio_file.mp3'; // Replace with your audio file path
+  audio.load();
+  audio.play();
+}
+</script>
+
+</body>
+</html>
